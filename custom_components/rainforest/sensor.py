@@ -14,7 +14,6 @@ from homeassistant.const import (
 import logging
 import voluptuous as vol
 from threading import Thread
-import emu
 
 __version__ = '0.2.3'
 
@@ -124,12 +123,6 @@ class EMU2Sensor(Entity):
         _LOGGER.debug("Thread Starting")
         import serial, time
         import xml.etree.ElementTree as xmlDecoder
-
-        instance = emu('/tty/usbACM0')
-        instance.start_serial()
-        instance.get_network_info()
-
-        _LOGGER.debug("Emu Instance Status: %s",instance.NetworkInfo.Status)
 
         reader = None
         while reader == None:
