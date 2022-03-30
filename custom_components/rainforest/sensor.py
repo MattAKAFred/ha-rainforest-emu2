@@ -14,7 +14,7 @@ from homeassistant.const import (
 import logging
 import voluptuous as vol
 from threading import Thread
-from . import emu
+import emu
 
 __version__ = '0.2.3'
 
