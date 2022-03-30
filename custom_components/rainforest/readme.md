@@ -38,3 +38,4 @@ sensor:
  * https://github.com/home-assistant/home-assistant/blob/master/homeassistant/components/sensor/serial.py
  * https://home-assistant.io/components/sensor.date_countdown/
  * https://github.com/rainforestautomation/Emu-Serial-API
+ * https://github.com/activescott/Emu-Serial-API/tree/feat/python3-support (used for Python-3 Compatibility)
