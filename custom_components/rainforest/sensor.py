@@ -135,6 +135,7 @@ class EMU2Sensor(Entity):
         
         _LOGGER.debug("Begining Loop")
         while self._serial_thread_isEnabled:
+            _LOGGER.debug("Serial Thread Enabled")
             if (reader.in_waiting > 0):
                 _LOGGER.debug("Data RX")
                 msgStr = reader.read(reader.in_waiting).decode()
