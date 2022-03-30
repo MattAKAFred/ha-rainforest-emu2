@@ -124,7 +124,6 @@ class EMU2Sensor(Entity):
         _LOGGER.debug("Thread Starting")
         import serial, time
         import xml.etree.ElementTree as xmlDecoder
-        
 
         instance = emu('/tty/usbACM0')
         instance.start_serial()
