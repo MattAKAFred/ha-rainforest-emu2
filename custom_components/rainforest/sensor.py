@@ -206,7 +206,7 @@ class EMU2Sensor(Entity):
                              
                         
             else:
-                time.sleep(0.5)
+                time.sleep(5)
 
         reader.close()
 
