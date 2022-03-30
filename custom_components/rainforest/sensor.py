@@ -4,11 +4,13 @@ For more details about this component, please refer to the documentation
 at https://github.com/jrhorrisberger/home-assistant/blob/master/custom_components/rainforest/readme.md
 """
 
+from __future__ import annotations
+
 from homeassistant.helpers.entity import Entity
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.const import (
-    CONF_NAME, EVENT_HOMEASSISTANT_STOP)
+    CONF_NAME, EVENT_HOMEASSISTANT_STOP, ENERGY_KILO_WATT_HOUR, POWER_KILO_WATT)
 import logging
 import voluptuous as vol
 from threading import Thread
@@ -134,7 +136,7 @@ class EMU2Sensor(Entity):
         _LOGGER.debug("Begining Loop")
         while self._serial_thread_isEnabled:
             if (reader.in_waiting > 0):
-                #_LOGGER.debug("Data RX")
+                _LOGGER.debug("Data RX")
                 msgStr = reader.read(reader.in_waiting).decode()
 
                 if msgStr != [] and msgStr[0] == '<':
