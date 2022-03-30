@@ -123,6 +123,13 @@ class EMU2Sensor(Entity):
         _LOGGER.debug("Thread Starting")
         import serial, time
         import xml.etree.ElementTree as xmlDecoder
+        import emu
+
+        instance = emu('/tty/usbACM0')
+        instance.start_serial()
+        instance.get_network_info()
+
+        _LOGGER.debug("Emu Instance Status: %s",instance.NetworkInfo.Status)
 
         reader = None
         while reader == None:
